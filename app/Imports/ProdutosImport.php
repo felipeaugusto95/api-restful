@@ -15,7 +15,7 @@ class ProdutosImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
-        if($row['nome'] && $row['quantidade']) {
+        if(($row['nome'] && $row['quantidade']) && is_numeric($row['quantidade'])) {
             if (isset($row['id'])) {
                 if ($prod = Produto::find($row['id'])) {
                     $prod->nome = $row['nome'];
