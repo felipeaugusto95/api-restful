@@ -21,7 +21,7 @@ A adição/edição de produtos só pode ser feita via planilha Excel (extensão
 
   - |POST| http://127.0.0.1:8000/api/importar
 
-Possíveis retornos:
+<p>Possíveis retornos:</p>
 <p>Sucesso:</p>
 
     {
@@ -36,7 +36,7 @@ Além de ser possível deletar um produto. Segue abaixo, os respectivos endpoint
 
    - |GET| http://127.0.0.1:8000/api/produtos
 
-Possíveis retornos:
+<p>Possíveis retornos:</p>
 
     {
         "data": [
@@ -60,8 +60,8 @@ Possíveis retornos:
        
    - |GET| http://127.0.0.1:8000/api/produtos/{id}
 
-Possíveis retornos:
-Sucesso:
+<p>Possíveis retornos:</p>
+<p>Sucesso:</p>
 
     {
         "data": {
@@ -73,7 +73,7 @@ Sucesso:
         }
     }
     
-Produto não encontrado:
+<p>Produto não encontrado:</p>
 
     {
         "data": {
@@ -83,7 +83,7 @@ Produto não encontrado:
        
    - |DELETE| http://127.0.0.1:8000/api/produtos/{id}
    
-Sucesso:
+<p>Sucesso:</p>
 
     {
         "data": {
@@ -97,8 +97,8 @@ Para conferir se o procesamento ocorreu com sucesso ou houve algum problema, bas
 
    - |GET| http://127.0.0.1:8000/api/processamento/{tracking_code}
    
-Retornos possíveis:
-Sucesso:
+<p>Possíveis retornos:</p>
+<p>Sucesso:</p>
 
     {
         "data": {
@@ -106,7 +106,7 @@ Sucesso:
         }
     }
     
-Erro:
+<p>Erro:</p>
 
     {
         "data": {
@@ -114,7 +114,7 @@ Erro:
         }
     }
     
-Em processamento:
+<p>Em processamento:</p>
 
     {
         "data": {
