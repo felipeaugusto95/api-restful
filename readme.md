@@ -29,7 +29,9 @@ A adição/edição de produtos só pode ser feita via planilha Excel (extensão
             "tracking_code": "1589814050",
             "msg": "O arquivo foi importado com sucesso!"
         }
-    }  
+    }
+    
+<b>Obs.:</b> A planilha deve ter formato xlsx e deve conter apenas uma folha (sheet)    
   
 É possível também recuperar todos os produtos cadastrados ou recuperar um produto específico, passando seu id como parâmetro.
 Além de ser possível deletar um produto. Segue abaixo, os respectivos endpoints:
