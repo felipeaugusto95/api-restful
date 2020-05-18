@@ -20,6 +20,7 @@ Ou então, para uma melhor performance da aplicação, outro comando pode ser us
 A adição/edição de produtos só pode ser feita via planilha Excel (extensão xlsx), que será enviada através do endpoint abaixo:
 
   - |POST| http://127.0.0.1:8000/api/importar
+
 Possíveis retornos:
 Sucesso:
 
@@ -34,6 +35,7 @@ Sucesso:
 Além de ser possível deletar um produto. Segue abaixo, os respectivos endpoints:
 
    - |GET| http://127.0.0.1:8000/api/produtos
+
 Possíveis retornos:
 
     {
@@ -57,6 +59,7 @@ Possíveis retornos:
     }
        
    - |GET| http://127.0.0.1:8000/api/produtos/{id}
+
 Possíveis retornos:
 Sucesso:
 
@@ -79,6 +82,7 @@ Produto não encontrado:
     }    
        
    - |DELETE| http://127.0.0.1:8000/api/produtos/{id}
+   
 Sucesso:
 
     {
