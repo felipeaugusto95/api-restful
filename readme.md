@@ -2,9 +2,9 @@
 
 <p align="center">Catalogo de Produtos - Adição/Edição via Planilha</p>
 
-Foi desenvolvida uma API RESTful em Laravel para gerenciar um catálogo de produtos.
+<p>Foi desenvolvida uma API RESTful em Laravel para gerenciar um catálogo de produtos.<p>
 
-===============================================================
+
 Para executar a aplicação, além do comando "php artisan serve" é preciso deixar uma fila "escutando" as requisições a serem executadas:
 
     $ php artisan queue:listen
@@ -13,8 +13,8 @@ Ou então, para uma melhor performance da aplicação, outro comando pode ser us
 
     $ php artisan queue:work connection --daemon
 
-===============================================================
-Funcionamento da Aplicação
+
+<h2>Funcionamento da Aplicação</h2>
 
 
 A adição/edição de produtos só pode ser feita via planilha Excel (extensão xlsx), que será enviada através do endpoint abaixo:
