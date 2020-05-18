@@ -3,25 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Job;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProcessamentoController extends Controller
 {
-    private $job;
-
-    public function __construct(Job $job)
+    public function verifica($id)
     {
-        $this->job = $job;
-    }
+        try{
+            $failed = DB::table('failed_jobs')
+                    ->where('payload', 'like', "%$id%")
+                    ->get();
 
-    public function verifica($id){
+            if($failed->all())
+                return response()->json(['data' => ['msg' => 'Houve um erro ao processsar a planilha!']], 200);
 
-        $job = $this->job->find($id);
+            $job = DB::table('jobs')
+                ->where('payload', 'like', "%$id%")
+                ->get();
 
-        if(!$job)
-            return response()->json(['data' => ['msg' => 'Planilha já foi processada!']], 200);
+            $data = ($job->all()) ? ['data' => ['msg' => 'Planilha na fila para processamento!']] : ['data' => ['msg' => 'A planilha foi processada com sucesso!']];
 
-        $data = ['data' => ['msg' => 'Planilha na fila para processamento']];
-        return response()->json($data, 200);
+            return response()->json($data, 200);
+
+        } catch (\Exception $e){
+            return response()->json(['data' => ['msg' => 'Erro interno']], 500);
+        }
     }
 }

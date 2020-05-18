@@ -15,20 +15,23 @@ class ProdutosImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
-        if (isset($row['id'])) {
-            if($prod = Produto::find($row['id'])){
-                $prod->nome = $row['nome'];
-                $prod->quantidade = $row['quantidade'];
-                $prod->save();
+        if($row['nome'] && $row['quantidade']) {
+            if (isset($row['id'])) {
+                if ($prod = Produto::find($row['id'])) {
+                    $prod->nome = $row['nome'];
+                    $prod->quantidade = $row['quantidade'];
+                    $prod->save();
 
-                return $prod;
+                    return $prod;
+                }
             }
-        }
 
-        return new Produto([
-            'nome'       => $row['nome'],
-            'quantidade' => $row['quantidade']
-        ]);
+            return new Produto([
+                'nome' => $row['nome'],
+                'quantidade' => $row['quantidade']
+            ]);
+        }
+        return null;
     }
 
 }
